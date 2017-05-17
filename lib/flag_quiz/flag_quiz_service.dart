@@ -254,4 +254,7 @@ class CountryService {
       return "";
     }
   }
+
+  bool checkCorrect(String abbrv, String actual) =>
+      _countries[abbrv] == actual;
 }

@@ -1,0 +1,17 @@
+.guess {
+    background-color: #1976D2;
+    color: white;
+}
+
+.correct {
+    background-color: #388E3C;
+    color: white;
+}
+
+.nope {
+    background-color: #D32F2F;
+    color: white;
+}
+.guess_input {
+    width: 80%;
+}

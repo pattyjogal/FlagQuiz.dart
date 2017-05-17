@@ -2,13 +2,13 @@
     <div>
         <img src="{{flagUrl}}">
     </div>
-    <material-input (input)="updateGuess($event.target.value)"
+    <material-input class="guess_input"
+                    (input)="updateGuess($event.target.value)"
                     label="What country is this?"
                     autoFocus floatingLabel>
 
     </material-input>
-    <material-button [disabled]="!isButtonEnabled" (click)="submitGuess()">
-        Guess!
+    <material-button class="{{status}}" [disabled]="!isButtonEnabled" (click)="submitGuess()">
+        {{status}}
     </material-button>
-    <div>{{guess}} <-- Guess </div>
 </div>
