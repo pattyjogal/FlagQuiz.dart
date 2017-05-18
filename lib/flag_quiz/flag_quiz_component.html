@@ -8,7 +8,9 @@
                     autoFocus floatingLabel>
 
     </material-input>
-    <material-button class="{{status}}" [disabled]="!isButtonEnabled" (click)="submitGuess()">
+    <material-button id="status"
+                     [disabled]="!isButtonEnabled"
+                     (click)="submitGuess()">
         {{status}}
     </material-button>
 </div>

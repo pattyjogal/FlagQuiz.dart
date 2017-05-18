@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 import 'package:FlagQuiz/flag_quiz/flag_quiz_service.dart';
 import 'package:angular2/core.dart';
 import 'package:angular_components/angular_components.dart';
@@ -32,12 +33,20 @@ class FlagQuizComponent implements OnInit {
     }
   }
 
-  void submitGuess() {
+  Future submitGuess() async {
     if (_countryService.checkCorrect(actualCountry.toUpperCase(), guess)) {
       status = "correct";
-      //TODO: Go back to guess
+      querySelector('#status').animate([{"color": '#1976D2'}, {"color": '#388E3C'}], 1000);
+      await querySelector('#status').animate([{"color": '#388E3C'}, {"color": '#1976D2'}], 1000);
+      status = "guess";
+
     } else {
       status = "nope";
+      querySelector('#status').animate([{"color": '#1976D2'}, {"color": '#D32F2F'}], 1000);
+      await querySelector('#status').animate([{"color": '#D32F2F'}, {"color": '#1976D2'}], 1000);
+      status = "guess";
+
+
     }
 
     newCountry();
